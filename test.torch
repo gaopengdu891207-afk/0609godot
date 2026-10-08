@@ -1,0 +1,200 @@
+[orchestration type="OScript" load_steps=15 format=5 uid="uid://b1ra2y4cskr6y"]
+
+[obj type="OScriptFunction" id="OScriptFunction_orolp"]
+guid = "22905517-41F0-466E-94AD-FB32A18D4739"
+method = {
+"name": &"_ready",
+"flags": 8
+}
+id = 0
+
+[obj type="OScriptFunction" id="OScriptFunction_llupj"]
+guid = "A09AA4DA-E30C-4526-ACDD-9666EAD39860"
+method = {
+"name": &"_process",
+"flags": 8,
+"args": [{
+"name": &"delta",
+"type": 3
+}]
+}
+id = 3
+
+[obj type="OScriptGraph" id="OScriptGraph_10o0e"]
+graph_name = &"EventGraph"
+flags = 8
+nodes = Array[int]([0, 1, 2, 3, 4, 5, 6, 7, 8])
+functions = Array[int]([0, 3])
+
+[obj type="OScriptGraph" id="OScriptGraph_8ljyi"]
+graph_name = &"NewEventGraph"
+flags = 14
+
+[obj type="OScriptGraph" id="OScriptGraph_htlsc"]
+graph_name = &"NewEventGraph_0"
+flags = 14
+
+[obj type="OScriptNodeEvent" id="OScriptNodeEvent_10o0e"]
+function_id = "22905517-41F0-466E-94AD-FB32A18D4739"
+id = 0
+position = Vector2(140, 420)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}])
+
+[obj type="OScriptNodeComment" id="OScriptNodeComment_bh8nx"]
+comments = "Called when the node enters the scene tree for the first time.
+Replace the function body."
+attached_nodes = PackedInt64Array(0)
+id = 1
+size = Vector2(449, 296)
+position = Vector2(220, 360)
+
+[obj type="OScriptNodePrintString" id="OScriptNodePrintString_6176b"]
+id = 2
+position = Vector2(1640, 400)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"Text",
+"type": 4,
+"flags": 2,
+"dv": "Hello"
+}, {
+"pin_name": &"PrintToScreen",
+"type": 1,
+"flags": 2,
+"dv": true
+}, {
+"pin_name": &"PrintToLog",
+"type": 1,
+"flags": 2,
+"dv": true
+}, {
+"pin_name": &"TextColor",
+"type": 20,
+"flags": 2,
+"dv": Color(1, 1, 1, 1)
+}, {
+"pin_name": &"Duration",
+"type": 3,
+"flags": 2,
+"dv": 2,
+"gdv": 0
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}])
+
+[obj type="OScriptNodeEvent" id="OScriptNodeEvent_x2lyn"]
+function_id = "A09AA4DA-E30C-4526-ACDD-9666EAD39860"
+id = 3
+position = Vector2(220, 1260)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}, {
+"pin_name": &"delta",
+"type": 3,
+"dir": 1,
+"flags": 2
+}])
+
+[obj type="OScriptNodeComment" id="OScriptNodeComment_sra6w"]
+comments = "Called every frame.
+'delta' is the elapsed time since the previous frame."
+attached_nodes = PackedInt64Array(3)
+id = 4
+size = Vector2(388, 347)
+position = Vector2(180, 1100)
+
+[obj type="OScriptNodePrintString" id="OScriptNodePrintString_ec6h4"]
+id = 5
+position = Vector2(940, 1060)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"Text",
+"type": 4,
+"flags": 2,
+"dv": ""
+}, {
+"pin_name": &"PrintToScreen",
+"type": 1,
+"flags": 2,
+"dv": false
+}, {
+"pin_name": &"PrintToLog",
+"type": 1,
+"flags": 2,
+"dv": true
+}, {
+"pin_name": &"TextColor",
+"type": 20,
+"flags": 2,
+"dv": Color(1, 1, 1, 1)
+}, {
+"pin_name": &"Duration",
+"type": 3,
+"flags": 2,
+"dv": 2,
+"gdv": 0
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}])
+
+[obj type="OScriptNodeInputAction" id="OScriptNodeInputAction_8ljyi"]
+action = "ui_accept"
+id = 6
+size = Vector2(360, 260)
+position = Vector2(320, 1520)
+pin_data = Array[Dictionary]([{
+"pin_name": &"state",
+"type": 1,
+"dir": 1,
+"flags": 2,
+"label": "Pressed",
+"dv": false
+}])
+
+[obj type="OScriptNodeSingletonConstant" id="OScriptNodeSingletonConstant_8ljyi"]
+class_name = "ResourceLoader"
+id = 7
+position = Vector2(2440, 1220)
+pin_data = Array[Dictionary]([{
+"pin_name": &"constant",
+"type": 2,
+"dir": 1,
+"flags": 2050,
+"label": "ResourceLoader"
+}])
+
+[obj type="OScriptNodeCallParentScriptFunction" id="OScriptNodeCallParentScriptFunction_kb4oh"]
+guid = "22905517-41F0-466E-94AD-FB32A18D4739"
+function_name = &"_ready"
+id = 8
+position = Vector2(140, 536.0000610351563)
+pin_data = Array[Dictionary]([{
+"pin_name": &"ExecIn",
+"flags": 4
+}, {
+"pin_name": &"ExecOut",
+"dir": 1,
+"flags": 4
+}])
+
+[resource]
+base_type = &"Node"
+description = "Base template for Node with default Godot cycle methods."
+functions = Array[OScriptFunction]([SubResource("OScriptFunction_orolp"), SubResource("OScriptFunction_llupj")])
+connections = Array[int]([0, 0, 2, 0, 3, 0, 5, 0, 6, 0, 5, 1, 6, 0, 5, 2])
+nodes = Array[OScriptNode]([SubResource("OScriptNodeEvent_10o0e"), SubResource("OScriptNodeComment_bh8nx"), SubResource("OScriptNodePrintString_6176b"), SubResource("OScriptNodeEvent_x2lyn"), SubResource("OScriptNodeComment_sra6w"), SubResource("OScriptNodePrintString_ec6h4"), SubResource("OScriptNodeInputAction_8ljyi"), SubResource("OScriptNodeSingletonConstant_8ljyi"), SubResource("OScriptNodeCallParentScriptFunction_kb4oh")])
+graphs = Array[OScriptGraph]([SubResource("OScriptGraph_10o0e"), SubResource("OScriptGraph_8ljyi"), SubResource("OScriptGraph_htlsc")])
