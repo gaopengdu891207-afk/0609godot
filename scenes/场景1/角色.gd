@@ -41,10 +41,10 @@ func _physics_process(delta: float) -> void:
 
 func 射线扫描():
 	# 建立射线查询参数，并排除本身物理体
-	var 射线查询 := PhysicsRayQueryParameters3D.create(fp视角.global_position, fp视角.global_position - fp视角.global_basis.z * 100,  0xFFFFFFF, [self]) 
-	var 射线结果 = get_world_3d().direct_space_state.intersect_ray(射线查询)
-	if 射线结果:
-		命中标记.global_position = 射线结果["position"] + 射线结果["normal"] * 0.02
+	var 射线查询参数 := PhysicsRayQueryParameters3D.create(fp视角.global_position, fp视角.global_position - fp视角.global_basis.z * 100,  0xFFFFFFF, [self]) 
+	var 相交字典 = get_world_3d().direct_space_state.intersect_ray(射线查询参数)
+	if 相交字典:
+		命中标记.global_position = 相交字典["position"] + 相交字典["normal"] * 0.02
 		命中标记.visible = true
-		print("命中对象：", 射线结果["collider"])
-		print("命中位置：", 射线结果["position"])
+		print("命中对象：", 相交字典["collider"])
+		print("命中位置：", 相交字典["position"])
